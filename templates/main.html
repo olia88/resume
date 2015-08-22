@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block head_title %} Главная {% endblock %}
+
+{% block main %}
+    {% block jumbotron %}
+    <div class="row">
+        <div class="jumbotron" style="overflow:auto">
+            <div class="col-sm-8" style="float:left">
+                <h2>Емец Ольга Николаевна</h2>
+                <h3>Мобильный телефон: 050-216 56 19</h3>
+            </div>
+            <div class="col-sm-4" style="height:150px; float:right"><img width="130" height="150" src="static/1111.jpg"></div>
+        </div>
+    </div>
+    {% endblock %}
+    <div class="row">
+        <h2 class="text-align-center">Junior Python Developer</h2>
+        <table class="table">
+            <tr><td>Образование:</td><td>Донбасская государственная машиностроительная академия "Технология и оборудование сварочного производства"</td></tr>
+            <tr><td></td><td>Донбасская государственная машиностроительная академия "Экономика предприятия"</td></tr>
+            <tr><td>Курсы:</td><td>“Diving into Software Testing” 2014 год</td></tr>
+            <tr><td>Навыки:</td><td><ul><li>Html, CSS</li><li>GIT</li><li>Python, Django</li><li>intermediate English</li></ul></td></tr>
+            <tr><td>Опыт работы:</td><td>2011-2013 Краматорский завод металлоконструкций - инжеер-конструкор</td></tr>
+            <tr><td></td><td>2013-нас.время Краматорский завод металлоконструкций - инженер по нормированию труда</td></tr>
+        </table>
+    </div>
+{% endblock %}

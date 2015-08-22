@@ -1,0 +1,16 @@
+.text-align-center{
+    text-align: center;
+}
+
+.container{
+    width:900px;
+    margin: 0 auto 20px auto;
+}
+
+.navbar-bottom{
+    margin:0;
+}
+
+.col-sm-6{
+    float: none;
+}

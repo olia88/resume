@@ -1,0 +1,37 @@
+{% load staticfiles %}
+{% load member_tags %}
+
+
+<!-- Static navbar -->
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Resume</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Главная</a></li>
+                <li><a href="{% url 'contact' %}">Контакты</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="/cabinet/edit/{{user.id}}">Личный кабинет</a></li>
+                {% endif %}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if request.user.is_authenticated %}
+                    <li><a href="{%url 'auth_logout'%}">Выйти({{ member.first_name }}.{{member.last_name|slice:":1"}})</a></li>
+                    {% if member.avatar %}<img width="60" height="60" src="{{member.avatar.url}}">
+                    {% else %}<img width="60" height="60" src="static/5682584.jpg">
+                    {% endif %}
+                {%else%}
+                    <li><a href="{%url 'auth_login'%}">Войти</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

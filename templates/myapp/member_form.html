@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block head_title %} Личный кабинет {% endblock %}
+
+{% block content %}
+    <div class="col-sm-6 col-sm-offset-3">
+        <h1 class="text-align-center">Редактировать профиль</h1>
+        <form method="post" action="/cabinet/edit/{{user.id}}/" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input class="btn btn-primary" type="submit" name="_save" value="Сохранить изменения" />
+        </form>
+        <p><a href="/cabinet/(?P<pk>\d+)/delete/">Удалить профиль</a></p>
+    </div>
+{% endblock %}
